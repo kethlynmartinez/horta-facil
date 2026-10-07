@@ -1,0 +1,15 @@
+/* Avisos dentro da página */
+.avisos {
+  position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%);
+  z-index: 200; display: flex; flex-direction: column; gap: 10px; align-items: center;
+  width: calc(100% - 32px); max-width: 460px; pointer-events: none;
+}
+.aviso {
+  width: 100%; padding: 14px 20px; border-radius: 12px; font-family: 'Montserrat', sans-serif;
+  font-size: 14px; font-weight: 600; line-height: 1.4; color: #ffffff; background: #143b2f;
+  border: 1px solid #97b0a3; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  opacity: 0; transform: translateY(12px); transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.aviso--visivel { opacity: 1; transform: translateY(0); }
+.aviso--sucesso { border-color: #b6f04a; }
+.aviso--erro { background: #7a2a1d; border-color: #e0806c; }

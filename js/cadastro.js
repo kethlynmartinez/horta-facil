@@ -11,23 +11,23 @@ if (form) {
     const confirmarSenha = document.getElementById("confirmar-senha").value;
 
     if (senha !== confirmarSenha) {
-      alert("Erro: A senha e a confirmação de senha não coincidem.");
+      mostrarAviso("A senha e a confirmação de senha não coincidem.", "erro");
       return;
     }
 
     if (senha.length < 6) {
-      alert("Erro: A senha deve ter no mínimo 6 caracteres.");
+      mostrarAviso("A senha deve ter no mínimo 6 caracteres.", "erro");
       return;
     }
 
     const resultado = cadastrarUsuarioMock({ nome, username, email, senha });
 
     if (!resultado.sucesso) {
-      alert(resultado.mensagem);
+      mostrarAviso(resultado.mensagem, "erro");
       return;
     }
 
-    alert("Cadastro realizado com sucesso! Redirecionando para o login.");
-    window.location.href = "login.html";
+    mostrarAviso("Cadastro realizado com sucesso! Redirecionando para o login.", "sucesso");
+    setTimeout(function () { window.location.href = "login.html"; }, 1600);
   });
 }

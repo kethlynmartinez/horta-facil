@@ -13,6 +13,6 @@ if (form)
       localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
       window.location.href = "logado.html";
     } else {
-      alert("E-mail ou senha inválidos");
+      mostrarAviso("E-mail ou senha inválidos.", "erro");
     }
   });

@@ -82,7 +82,7 @@ if (seletor) {
       const img = document.createElement("img");
       img.className = "list__item-img";
       img.alt = p.nome;
-      img.src = p.img || "src/perfil/avatar3.svg";
+      img.src = p.img || "src/plantas/sem-foto.svg";
       const nome = document.createElement("span");
       nome.className = "list__item-name";
       nome.textContent = p.nome;
@@ -111,7 +111,7 @@ if (seletor) {
       const img = document.createElement("img");
       img.className = "plant-card__img";
       img.alt = p.nome;
-      img.src = "src/perfil/avatar3.svg";
+      img.src = "src/plantas/sem-foto.svg";
       HortaPlantas.obterImagem(p).then(url => { if (url) img.src = url; });
       const t = document.createElement("h3");
       t.className = "plant-card__title";

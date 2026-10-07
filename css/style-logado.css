@@ -432,3 +432,6 @@ button, input, select, textarea { font-family: inherit; }
   .hero-visual, .hero-section { padding-left: 20px; padding-right: 20px; }
   footer, .main-footer { flex-direction: column; gap: 20px; padding: 30px 20px; }
 }
+
+.catalogo-cta { display: flex; justify-content: center; margin-top: 50px; clear: both; }
+.catalogo-cta .btn--catalogo { margin-top: 0; }

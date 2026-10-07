@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <title>Horta Fácil | Gerenciar Canteiros</title>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style-canteiros.css?v=5">
-  <link rel="stylesheet" href="css/perfil.css?v=5">
+  <link rel="stylesheet" href="css/style-canteiros.css?v=6">
+  <link rel="stylesheet" href="css/perfil.css?v=6">
+  <link rel="stylesheet" href="css/toast.css?v=6">
 </head>
 <body data-protegida>
 <header class="hero" id="inicio">
@@ -45,12 +46,20 @@
 </div>
 <section class="planejamento">
 <h2>Planejamento e organização</h2>
-<p class="subtitle">Dicas para montar seus canteiros</p>
+<p class="subtitle">Escolha uma estação para planejar seus canteiros</p>
+<div class="plan-controle">
+<label for="plan-select" class="plan-controle__label">Planejar para</label>
+<select id="plan-select" class="plan-select" aria-label="Estação do ano"></select>
+</div>
 <div class="plan-grid">
 <article class="plan-card">
-<h3>Para plantar nesta estação: <span id="plan-estacao"></span></h3>
-<div class="tags tags--claro" id="plan-agora"></div>
+<h3>Para plantar em <span id="plan-estacao"></span></h3>
+<div class="tags" id="plan-agora"></div>
 <a href="catalogo.html" class="plan-link">Ver catálogo completo</a>
+</article>
+<article class="plan-card">
+<h3>Dicas para <span id="plan-estacao-dicas"></span></h3>
+<ul class="plan-lista" id="plan-dicas"></ul>
 </article>
 <article class="plan-card">
 <h3>Como organizar</h3>
@@ -108,9 +117,10 @@
 © 2026 Horta Fácil · IFRS
 </div>
 </footer>
-<script src="js/plantas-data.js?v=5"></script>
-<script src="js/plantas-dicas.js?v=5"></script>
-<script src="js/gerenciar-canteiros.js?v=5"></script>
-<script src="js/perfil.js?v=5"></script>
+<script src="js/toast.js?v=6"></script>
+<script src="js/plantas-data.js?v=6"></script>
+<script src="js/plantas-dicas.js?v=6"></script>
+<script src="js/gerenciar-canteiros.js?v=6"></script>
+<script src="js/perfil.js?v=6"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function salvar() {
         try { localStorage.setItem(STORAGE_KEY, JSON.stringify(canteiros)); }
-        catch (e) { alert("Não foi possível salvar: o armazenamento do navegador está cheio ou bloqueado."); }
+        catch (e) { mostrarAviso("Não foi possível salvar: o armazenamento do navegador está cheio ou bloqueado.", "erro"); }
     }
 
     function escapar(t) {
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="plantas">
                     ${canteiro.plantas.map(p => `
                         <div class="planta">
-                            <img src="${p.img || 'src/perfil/avatar3.svg'}" alt="${escapar(p.nome)}" class="plant-img-thumb${p.img ? '' : ' plant-img-thumb--vazia'}">
+                            <img src="${p.img || 'src/plantas/sem-foto.svg'}" alt="${escapar(p.nome)}" class="plant-img-thumb${p.img ? '' : ' plant-img-thumb--vazia'}">
                             <span>${escapar(p.nome)}</span>
                         </div>
                     `).join('')}
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function addPlantInput(name = '', img = '') {
         if (plantasInputsContainer.children.length >= MAX_PLANTAS) {
-            alert("Limite máximo de " + MAX_PLANTAS + " plantas por canteiro atingido.");
+            mostrarAviso("Limite máximo de " + MAX_PLANTAS + " plantas por canteiro atingido.", "erro");
             return;
         }
         const div = document.createElement("div");
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 mostrar(await lerFoto(arquivo));
                 fotoPropria = true;
             } catch (err) {
-                alert("Não foi possível ler essa imagem.");
+                mostrarAviso("Não foi possível ler essa imagem.", "erro");
             }
         });
 
@@ -192,21 +192,41 @@ document.addEventListener("DOMContentLoaded", () => {
     plantasInputsContainer.addEventListener("change", atualizarCompat);
     new MutationObserver(atualizarCompat).observe(plantasInputsContainer, { childList: true });
 
-    // planejamento: o que plantar nesta estação
+    // planejamento por estação
     (function () {
-        const est = HortaPlantas.estacaoAtual();
-        document.getElementById("plan-estacao").textContent = HortaPlantas.NOMES_ESTACAO[est];
-        const box = document.getElementById("plan-agora");
-        const populares = ["Alface", "Cebolinha", "Salsa", "Cenoura", "Tomate", "Manjericão", "Couve", "Rabanete", "Beterraba", "Coentro", "Feijão", "Abobrinha", "Espinafre", "Alho", "Cebola", "Pepino", "Milho", "Ervilha", "Rúcula", "Repolho"];
-        populares.map(n => HortaPlantas.buscarPorNome(n))
-            .filter(p => p && HortaPlantas.plantarEm(p, est))
-            .slice(0, 10)
-            .forEach(p => {
+        const atual = HortaPlantas.estacaoAtual();
+        const sel = document.getElementById("plan-select");
+        HortaPlantas.ORDEM_ESTACOES.forEach(e => {
+            const o = document.createElement("option");
+            o.value = e;
+            o.textContent = HortaPlantas.NOMES_ESTACAO[e] + (e === atual ? " (agora)" : "");
+            sel.appendChild(o);
+        });
+        sel.value = atual;
+
+        function desenhar() {
+            const est = sel.value;
+            const nome = HortaPlantas.NOMES_ESTACAO[est].toLowerCase();
+            document.getElementById("plan-estacao").textContent = nome;
+            document.getElementById("plan-estacao-dicas").textContent = nome;
+            const box = document.getElementById("plan-agora");
+            box.innerHTML = "";
+            HortaPlantas.sugestoesDaEstacao(est, 14).forEach(p => {
                 const s = document.createElement("span");
                 s.className = "tag";
                 s.textContent = p.nome;
                 box.appendChild(s);
             });
+            const lista = document.getElementById("plan-dicas");
+            lista.innerHTML = "";
+            HortaPlantas.DICAS_ESTACAO[est].forEach(d => {
+                const li = document.createElement("li");
+                li.textContent = d;
+                lista.appendChild(li);
+            });
+        }
+        sel.addEventListener("change", desenhar);
+        desenhar();
     })();
 
     addCanteiroCard.addEventListener("click", () => {
@@ -241,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const idToDelete = Number(canteiroIdInput.value);
         canteiros = canteiros.filter(c => c.id !== idToDelete);
         salvar();
-        alert("Canteiro excluído com sucesso!");
+        mostrarAviso("Canteiro excluído.", "sucesso");
         modalConfirmDelete.style.display = "none";
         renderCanteiros();
     });
@@ -278,12 +298,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (canteiro) {
                 canteiro.nome = nome;
                 canteiro.plantas = plantasData;
-                alert("Canteiro editado com sucesso!");
+                mostrarAviso("Canteiro atualizado.", "sucesso");
             }
         } else {
             const novoId = Date.now();
             canteiros.push({ id: novoId, nome: nome, plantas: plantasData });
-            alert("Canteiro adicionado com sucesso!");
+            mostrarAviso("Canteiro adicionado.", "sucesso");
         }
         salvar();
         modalForm.style.display = "none";

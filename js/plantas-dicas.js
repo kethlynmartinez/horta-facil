@@ -246,7 +246,44 @@ Violeta|OI
     return { boas, ruins };
   }
 
+  // dicas gerais por estação (Sul do Brasil)
+  const DICAS_ESTACAO = {
+    P: [
+      "Boa época para começar tomate, pimentão, pepino, abobrinha e manjericão.",
+      "Em setembro ainda pode haver geada: proteja as mudas mais sensíveis nas noites frias.",
+      "Aumente a rega aos poucos conforme os dias esquentam."
+    ],
+    V: [
+      "Regue de manhã cedo ou no fim da tarde, para a água não evaporar antes de chegar à raiz.",
+      "Cubra o solo com palha ou folhas secas para manter a umidade e reduzir o mato.",
+      "Folhosas sensíveis ao calor, como alface, agradecem um pouco de sombra à tarde."
+    ],
+    O: [
+      "Ótima época para alface, rúcula, cenoura, beterraba, rabanete e couve.",
+      "O solo ainda está morno e o clima é mais ameno, o que ajuda na germinação.",
+      "Aproveite para enriquecer o solo com composto antes do inverno."
+    ],
+    I: [
+      "Priorize couve, brócolis, repolho, cebola, alho e ervilha, que gostam de frio.",
+      "Em noites de geada, proteja as mudas com cobertura leve, como TNT ou palha.",
+      "Regue menos vezes: no frio o solo seca mais devagar."
+    ]
+  };
+
+  const POPULARES = ["Alface", "Rúcula", "Cebolinha", "Salsa", "Coentro", "Cenoura", "Beterraba", "Rabanete", "Couve", "Espinafre",
+    "Brócolis", "Repolho", "Cebola", "Alho", "Ervilha", "Tomate", "Manjericão", "Pimentão", "Pepino", "Abobrinha", "Milho", "Feijão",
+    "Quiabo", "Batata-doce", "Morango", "Hortelã", "Alecrim", "Orégano", "Tomilho", "Ora-pro-nóbis", "Capuchinha", "Girassol", "Calêndula", "Camomila"];
+
+  function sugestoesDaEstacao(est, limite) {
+    return POPULARES
+      .map(n => porNome[HortaPlantas.normalizar(n)])
+      .filter(p => p && p.estacoes && p.estacoes.includes(est))
+      .slice(0, limite || 12);
+  }
+
   Object.assign(HortaPlantas, {
+    DICAS_ESTACAO,
+    sugestoesDaEstacao,
     NOMES_ESTACAO,
     ORDEM_ESTACOES: ORDEM,
     estacaoDoMes,

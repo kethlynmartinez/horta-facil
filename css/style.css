@@ -455,15 +455,35 @@ h3 {
     align-items: flex-start;
   }
 }
-/* Catálogo: fundo em degradê para separar a barra superior do conteúdo */
-body[data-nav="publico"] {
-  background: linear-gradient(180deg, #1f5240 0%, #174234 35%, #123327 70%, #0f2f24 100%) fixed;
-}
+/* Catálogo: mesma estrutura das demais páginas (barra, imagem de abertura e fundo verde) */
+body[data-nav="publico"] { background-color: #102a22; }
 
-body[data-nav="publico"] .main-header,
-body[data-nav="publico"] .topbar {
-  background-color: #0b241b;
+.catalog-hero {
+  padding: 100px 80px;
+  background:
+    linear-gradient(90deg, rgba(10, 50, 35, 0.95) 0%, rgba(10, 50, 35, 0.65) 45%, rgba(10, 50, 35, 0.9) 100%),
+    url("img/2.png") center / cover no-repeat;
 }
+.catalog-hero__content { max-width: 600px; }
+.catalog-hero h1 { margin-bottom: 12px; }
+.catalog-hero p { line-height: 1.7; }
+
+.catalog-estacao { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; }
+.catalog-select {
+  padding: 10px 40px 10px 18px; border-radius: 999px; border: none; font-family: inherit;
+  font-size: 14px; font-weight: 600; color: #143b2f; background-color: #ffffff; cursor: pointer;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23143b2f' stroke-width='2' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat; background-position: right 16px center;
+}
+.catalog-select:focus-visible, .catalog-search:focus-visible { outline: 3px solid #b6f04a; outline-offset: 2px; }
+
+body[data-nav="publico"] .catalog-section { padding: 40px 40px 80px; }
+.catalog-filters { flex-wrap: wrap; gap: 6px; }
+.chip { padding: 6px 11px; font-size: 12px; }
+
+@media (max-width: 900px) { .catalog-hero { padding: 60px 30px; } }
+@media (max-width: 700px) { .catalog-estacao { flex-direction: column; gap: 8px; } body[data-nav="publico"] .catalog-section { padding-left: 20px; padding-right: 20px; } }
 
 body[data-nav="publico"] .main-menu__link--ativo {
   color: #b6f04a;

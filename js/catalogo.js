@@ -7,12 +7,18 @@
   const contagem = document.getElementById("catalogo-contagem");
   const btnMais = document.getElementById("catalogo-mais");
 
-  const PLACEHOLDER = "src/perfil/avatar3.svg";
+  const PLACEHOLDER = "src/plantas/sem-foto.svg";
 
-  const chkAgora = document.getElementById("catalogo-agora");
+  const selEstacao = document.getElementById("catalogo-estacao");
   const estacaoAtual = HortaPlantas.estacaoAtual();
-  document.getElementById("catalogo-agora-texto").textContent =
-    "Mostrar só o que plantar nesta estação (" + HortaPlantas.NOMES_ESTACAO[estacaoAtual].toLowerCase() + ")";
+  [["todas", "Todas as estações"]].concat(HortaPlantas.ORDEM_ESTACOES.map(e =>
+    [e, HortaPlantas.NOMES_ESTACAO[e] + (e === estacaoAtual ? " (agora)" : "")]
+  )).forEach(([valor, texto]) => {
+    const o = document.createElement("option");
+    o.value = valor;
+    o.textContent = texto;
+    selEstacao.appendChild(o);
+  });
 
   let categoria = "Todas";
   let termo = "";
@@ -38,7 +44,7 @@
     const t = HortaPlantas.normalizar(termo);
     return todas.filter(p =>
       (categoria === "Todas" || p.categoria === categoria) &&
-      (!chkAgora.checked || HortaPlantas.plantarEm(p, estacaoAtual)) &&
+      (selEstacao.value === "todas" || HortaPlantas.plantarEm(p, selEstacao.value)) &&
       (!t || HortaPlantas.normalizar(p.nome).includes(t) || HortaPlantas.normalizar(p.cientifico).includes(t))
     );
   }
@@ -99,7 +105,7 @@
   document.getElementById("planta-modal-fechar").addEventListener("click", fecharDetalhe);
   modal.addEventListener("click", e => { if (e.target === modal) fecharDetalhe(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") fecharDetalhe(); });
-  chkAgora.addEventListener("change", () => { visiveis = TAM_PAGINA; render(); });
+  selEstacao.addEventListener("change", () => { visiveis = TAM_PAGINA; render(); });
 
   function criarCard(p) {
     const card = document.createElement("div");

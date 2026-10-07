@@ -120,7 +120,7 @@
     modal.querySelector("#perfilArquivo").addEventListener("change", e => {
       const arquivo = e.target.files[0];
       if (!arquivo) return;
-      reduzirImagem(arquivo).then(escolher).catch(() => alert("Não foi possível ler essa imagem."));
+      reduzirImagem(arquivo).then(escolher).catch(() => mostrarAviso("Não foi possível ler essa imagem.", "erro"));
     });
 
     modal.querySelector("#formPerfil").addEventListener("submit", e => {
@@ -183,11 +183,12 @@
         localStorage.setItem("horta_usuarios", JSON.stringify(lista));
       }
     } catch (e) {
-      alert("Não foi possível salvar: o armazenamento do navegador está cheio ou bloqueado.");
+      mostrarAviso("Não foi possível salvar: o armazenamento do navegador está cheio ou bloqueado.", "erro");
       return;
     }
     aplicarUsuario();
     fechar();
+    mostrarAviso("Perfil atualizado.", "sucesso");
   }
 
   if (editarLink) {

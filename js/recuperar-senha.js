@@ -7,7 +7,7 @@ if (form) {
         const email = document.getElementById("email").value;
         
         console.log(`Simulando envio de e-mail para: ${email}`);
-        alert("Se o e-mail estiver cadastrado, você receberá instruções em breve!");
-        window.location.href = "login.html"; // Redireciona de volta para o login
+        mostrarAviso("Se o e-mail estiver cadastrado, você receberá instruções em breve.", "sucesso");
+        setTimeout(function () { window.location.href = "login.html"; }, 2200); // volta para o login
     });
 }

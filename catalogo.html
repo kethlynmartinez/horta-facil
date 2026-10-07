@@ -5,13 +5,14 @@
   <title>Horta Fácil | Catálogo de Plantas</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=5">
-  <link rel="stylesheet" href="css/perfil.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/perfil.css?v=6">
+  <link rel="stylesheet" href="css/toast.css?v=6">
 
 </head>
 <body data-nav="publico">
 
-<header class="main-header" id="inicio">
+<header class="catalog-header" id="inicio">
   <nav class="topbar">
     <div class="brand">
       <img src="src/logo/logo.png" alt="Logotipo Horta Fácil" class="brand__logo">
@@ -26,20 +27,23 @@
 
     <a href="login.html" class="btn btn--secondary">Login</a>
   </nav>
+
+  <div class="catalog-hero">
+    <div class="catalog-hero__content">
+      <h1>Catálogo de Plantas</h1>
+      <p>Mais de 100 espécies com informações de sol, rega e época de plantio para planejar o próximo canteiro.</p>
+    </div>
+  </div>
 </header>
 
-<section class="catalog-intro">
-  <h1>Catálogo de Plantas</h1>
-  <p>
-    Mais de 100 espécies com informações de sol e rega para planejar o próximo canteiro. Busque pelo nome ou filtre por categoria.
-  </p>
-</section>
-
-<section class="catalog-section">
+<main class="catalog-section">
   <div class="catalog-toolbar">
     <input type="search" id="catalogo-busca" class="catalog-search" placeholder="Buscar por nome ou nome científico" aria-label="Buscar planta">
     <div class="catalog-filters" id="catalogo-filtros" role="group" aria-label="Filtrar por categoria"></div>
-    <label class="catalog-agora"><input type="checkbox" id="catalogo-agora"> <span id="catalogo-agora-texto">Mostrar só o que plantar nesta estação</span></label>
+    <div class="catalog-estacao">
+      <label for="catalogo-estacao" class="catalog-estacao__label">O que plantar em</label>
+      <select id="catalogo-estacao" class="catalog-select" aria-label="Filtrar por estação do ano"></select>
+    </div>
   </div>
   <p class="catalog-count" id="catalogo-contagem" aria-live="polite"></p>
 
@@ -49,7 +53,7 @@
     <button type="button" class="btn btn--secondary" id="catalogo-mais">Carregar mais</button>
   </div>
   <p class="catalog-credit">Fotos: iNaturalist e Wikipédia, com licenças e créditos nas páginas de origem. Informações de cultivo e plantio são orientações gerais.</p>
-</section>
+</main>
 
 <section class="dicas" id="dicas">
   <h2 class="dicas__titulo">Planejamento e organização</h2>
@@ -115,9 +119,10 @@
   </div>
 </footer>
 
-<script src="js/plantas-data.js?v=5"></script>
-<script src="js/plantas-dicas.js?v=5"></script>
-<script src="js/perfil.js?v=5"></script>
-<script src="js/catalogo.js?v=5"></script>
+<script src="js/toast.js?v=6"></script>
+<script src="js/plantas-data.js?v=6"></script>
+<script src="js/plantas-dicas.js?v=6"></script>
+<script src="js/perfil.js?v=6"></script>
+<script src="js/catalogo.js?v=6"></script>
 </body>
 </html>

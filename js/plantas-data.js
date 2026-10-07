@@ -133,14 +133,14 @@ Pitanga|Eugenia uniflora|Frutíferas|Sol pleno|Moderada
 Amora|Morus nigra|Frutíferas|Sol pleno|Moderada
 Jabuticaba|Plinia cauliflora|Frutíferas|Sol pleno|Frequente
 Abacaxi|Ananas comosus|Frutíferas|Sol pleno|Leve
-Girassol|Helianthus annuus|Flores comestíveis|Sol pleno|Moderada
-Tagetes|Tagetes erecta|Flores comestíveis|Sol pleno|Moderada
-Amor-perfeito|Viola tricolor|Flores comestíveis|Meia-sombra|Moderada
-Borragem|Borago officinalis|Flores comestíveis|Sol pleno|Moderada
-Rosa|Rosa chinensis|Flores comestíveis|Sol pleno|Moderada
-Cosmos|Cosmos sulphureus|Flores comestíveis|Sol pleno|Leve
-Cravo-de-defunto|Tagetes patula|Flores comestíveis|Sol pleno|Moderada
-Violeta|Viola odorata|Flores comestíveis|Meia-sombra|Moderada
+Girassol|Helianthus annuus|PANCs|Sol pleno|Moderada
+Tagetes|Tagetes erecta|PANCs|Sol pleno|Moderada
+Amor-perfeito|Viola tricolor|PANCs|Meia-sombra|Moderada
+Borragem|Borago officinalis|PANCs|Sol pleno|Moderada
+Rosa|Rosa chinensis|PANCs|Sol pleno|Moderada
+Cosmos|Cosmos sulphureus|PANCs|Sol pleno|Leve
+Cravo-de-defunto|Tagetes patula|PANCs|Sol pleno|Moderada
+Violeta|Viola odorata|PANCs|Meia-sombra|Moderada
 `;
 
   // fotos próprias que já existem no projeto
