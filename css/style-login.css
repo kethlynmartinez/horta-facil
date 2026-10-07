@@ -165,3 +165,5 @@
 .link--home:hover {
   color: #ffffff;
 }
+/* Formulários e botões herdam a fonte da página (por padrão usam Arial) */
+button, input, select, textarea { font-family: inherit; }

@@ -526,3 +526,17 @@ footer {
 .plan-link { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--verde-destaque); text-decoration: underline; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag { font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px; background: #e4efe8; color: var(--verde-escuro); }
+
+/* Formulários e botões herdam a fonte da página (por padrão usam Arial) */
+button, input, select, textarea { font-family: inherit; }
+
+/* Celular: barra superior quebra em duas linhas em vez de estourar a largura */
+@media (max-width: 700px) {
+  .topbar { flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 14px 20px; }
+  .topbar .menu, .topbar .main-menu { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; gap: 4px 14px; }
+  .menu__item { padding: 4px 6px; }
+  .hero-section__buttons, .hero-buttons { flex-direction: column; align-items: stretch; gap: 14px; }
+  .hero-section__buttons .btn, .hero-buttons .btn { text-align: center; }
+  .hero-visual, .hero-section { padding-left: 20px; padding-right: 20px; }
+  footer, .main-footer { flex-direction: column; gap: 20px; padding: 30px 20px; }
+}

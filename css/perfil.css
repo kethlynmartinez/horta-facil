@@ -48,3 +48,5 @@
 .perfil-modal__btn:hover { background: #143b2f; }
 .perfil-modal__btn--sec { background: transparent; border: 2px solid #97b0a3; color: #143b2f; }
 .perfil-modal__btn--sec:hover { background: #e4efe8; }
+
+.perfil-modal button, .perfil-modal input { font-family: inherit; }

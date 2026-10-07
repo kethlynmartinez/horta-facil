@@ -38,7 +38,6 @@ Cebolinha-francesa|PVO
 Aipo|OIP
 Segurelha|PV
 Cerefólio|OI
-Manjericão-roxo|PV
 Tomate|PV
 Tomate-cereja|PV
 Pimentão|PV

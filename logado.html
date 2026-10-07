@@ -5,8 +5,8 @@
   <title>Horta Fácil | Área Logada</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style-logado.css">
-  <link rel="stylesheet" href="css/perfil.css">
+  <link rel="stylesheet" href="css/style-logado.css?v=5">
+  <link rel="stylesheet" href="css/perfil.css?v=5">
 
 </head>
 <body data-protegida>
@@ -53,68 +53,20 @@
   <h2 class="section__title">Meus canteiros</h2>
   <p class="section__subtitle">Crie, edite e acompanhe seus canteiros</p>
 
-  <div class="canteiros-grid">
-
-    <div class="card canteiro-card">
-      <h3 class="card__title">🌿 PANCs</h3>
-      <div class="card__list">
-        <div class="list__item">
-          <img src="src/plantas/orapronobis.png" class="list__item-img">
-          <span class="list__item-name">Ora pro nobis</span>
-        </div>
-        <div class="list__item">
-          <img src="src/plantas/peixinho.png" class="list__item-img">
-          <span class="list__item-name">Peixinho da horta</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="card canteiro-card">
-      <h3 class="card__title">🌱 Temperos</h3>
-      <div class="card__list">
-        <div class="list__item">
-          <img src="src/plantas/oregano.jpg" class="list__item-img">
-          <span class="list__item-name">Orégano</span>
-        </div>
-        <div class="list__item">
-          <img src="src/plantas/manjerona.jpg" class="list__item-img">
-          <span class="list__item-name">Manjerona</span>
-        </div>
-      </div>
-    </div>
-
+  <div class="canteiros-grid" id="home-canteiros">
     <a href="canteiros.html" class="card canteiro-card--new">
-  <span class="card__plus">+</span>
-  <span>Novo canteiro</span>
-</a>
-    </div>
+      <span class="card__plus">+</span>
+      <span>Novo canteiro</span>
+    </a>
   </div>
 </section>
 
 <!-- BLOCO 2: Catálogo -->
 <section class="section features" id="catalogo">
   <h2 class="section__title">Catálogo de plantas</h2>
-  <p class="section__subtitle">Consulte informações completas de cultivo</p>
+  <p class="section__subtitle">Sugestões para plantar nesta estação: <span id="home-estacao"></span></p>
 
-  <div class="cards-grid">
-    <div class="card plant-card">
-      <img src="src/plantas/alface.jpg" alt="Alface" class="plant-card__img">
-      <h3 class="plant-card__title">Alface</h3>
-      <p class="plant-card__info">Sol pleno • Rega frequente</p>
-    </div>
-
-    <div class="card plant-card">
-      <img src="src/plantas/manjericao.jpg" alt="Manjericão" class="plant-card__img">
-      <h3 class="plant-card__title">Manjericão</h3>
-      <p class="plant-card__info">Sol pleno • Rega moderada</p>
-    </div>
-
-    <div class="card plant-card">
-      <img src="src/plantas/cebolinha.jpg" alt="Cebolinha" class="plant-card__img">
-      <h3 class="plant-card__title">Cebolinha</h3>
-      <p class="plant-card__info">Sol pleno • Rega leve</p>
-    </div>
-  </div>
+  <div class="cards-grid" id="home-plantas"></div>
 
   <a href="catalogo.html" class="btn btn--action btn--large btn--catalogo">
       Clique aqui e aprenda a cultivar mais de 100 espécies!
@@ -140,9 +92,10 @@
   </div>
 </footer>
 
-<script src="js/plantas-data.js"></script>
-<script src="js/logado.js"></script>
+<script src="js/plantas-data.js?v=5"></script>
+<script src="js/plantas-dicas.js?v=5"></script>
+<script src="js/logado.js?v=5"></script>
 
-<script src="js/perfil.js"></script>
+<script src="js/perfil.js?v=5"></script>
 </body>
 </html>
