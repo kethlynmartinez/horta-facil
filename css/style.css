@@ -1,0 +1,361 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  background-color: #0f2f24;
+  color: #ffffff;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+.text--cursive {
+  font-family: 'Pacifico', cursive;
+  font-size: 26px;
+  margin-bottom: 36px;
+  display: block;
+}
+
+/* Marca (Brand) */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand__logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand__name {
+  font-family: 'Pacifico', cursive;
+  font-size: 22px;
+}
+
+/* Botões (Buttons) */
+.btn {
+  background-color: #7fbf3f; /* Cor primária */
+  color: #ffffff;
+  border: none;
+  border-radius: 28px;
+  padding: 12px 28px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block; /* Para links agirem como botões inline-block */
+}
+
+.btn--large {
+  padding: 16px 40px;
+  font-size: 16px;
+}
+
+.btn--secondary {
+  /* Estilo para botões de login/cadastro, se necessário um visual diferente */
+  /* Neste caso, apenas garante que o 'display' seja inline-block */
+  display: inline-block;
+}
+
+/* Topo (Topbar) e Menu */
+.topbar {
+  background-color: #0f2f24;
+  padding: 20px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.main-menu__item {
+  padding: 6px 10px;
+}
+
+.main-menu__link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.main-menu__link:hover {
+  color: #7fbf3f;
+}
+
+/* Seções Gerais */
+.hero-section,
+.features-section,
+.cta-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.section-subtitle {
+  max-width: 700px;
+  margin: 14px auto 0;
+  opacity: 0.9;
+}
+
+/* Hero Section */
+.hero-section {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 50, 35, 0.95) 0%,
+      rgba(10, 50, 35, 0.65) 45%,
+      rgba(10, 50, 35, 0.9) 100%
+    ),
+    url("img/1.png") center / cover no-repeat;
+}
+
+.hero-section__content {
+  max-width: 600px;
+}
+
+.hero-section__content h1 {
+  color: #b6f04a;
+  margin-bottom: 26px;
+  line-height: 1.2;
+}
+
+.hero-section__content p {
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.hero-section__buttons {
+  display: flex;
+  gap: 24px;
+}
+
+/* Features Section (Funcionalidades) */
+.features-section {
+  text-align: center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 59, 47, 0.95) 0%,
+      rgba(20, 59, 47, 0.65) 50%,
+      rgba(20, 59, 47, 0.9) 100%
+    ),
+    url("img/2.png") center / cover no-repeat;
+}
+
+.card-grid {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background-color: #ffffff;
+  color: #143b2f;
+  width: 280px;
+  padding: 32px 26px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.feature-card__emoji {
+  font-size: 34px;
+  margin-bottom: 14px;
+}
+
+.feature-card__description {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* CTA Section (Benefícios) */
+.cta-section {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 47, 36, 0.95) 0%,
+      rgba(15, 47, 36, 0.65) 50%,
+      rgba(15, 47, 36, 0.9) 100%
+    ),
+    url("img/3.png") center / cover no-repeat;
+}
+
+.cta-section__content {
+  max-width: 620px;
+}
+
+/* Lista com setas (Benefit List) */
+.benefit-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 24px 0;
+}
+
+.benefit-list__item {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.benefit-list__item::before {
+  content: "➜";
+  position: absolute;
+  left: 0;
+  color: #7fbf3f;
+  font-size: 16px;
+}
+
+/* Footer */
+.main-footer {
+  background-color: #0f2f24;
+  padding: 40px 80px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-links__item {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* ===================================================== */
+/* Página de Catálogo (catalogo.html)                     */
+/* Reaproveita os tokens visuais já usados no restante do  */
+/* site (cores, raio de borda, sombra de hover).            */
+/* ===================================================== */
+
+.catalog-intro {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.catalog-intro h1 {
+  color: #b6f04a;
+  margin-bottom: 18px;
+}
+
+.catalog-intro p {
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.catalog-section {
+  padding-bottom: 100px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.cards-grid {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #ffffff;
+  color: #143b2f;
+  padding: 24px;
+  border-radius: 18px;
+}
+
+.plant-card {
+  width: 260px;
+  padding: 24px 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plant-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.plant-card__img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.plant-card__title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.plant-card__info {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  .catalog-intro,
+  .catalog-section {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* Responsivo simples */
+@media (max-width: 900px) {
+  .topbar,
+  .hero-section,
+  .features-section,
+  .cta-section,
+  .main-footer {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .main-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-section__buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

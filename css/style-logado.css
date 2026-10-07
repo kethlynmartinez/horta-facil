@@ -1,0 +1,419 @@
+:root {
+  --verde-destaque: #7fbf3f;
+  --verde-escuro: #143b2f;
+  --fundo-claro: #ffffff;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  background-color: #0f2f24;
+  color: #ffffff;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+.cursive {
+  font-family: 'Pacifico', cursive;
+  font-size: 26px;
+  margin-bottom: 36px;
+  display: block;
+}
+
+/* --- BLOCO BRAND (Marca) --- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand__logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand__name {
+  font-family: 'Pacifico', cursive;
+  font-size: 22px;
+}
+
+/* --- BLOCO BTN (Botões) --- */
+.btn {
+  background-color: var(--verde-destaque);
+  color: var(--fundo-claro);
+  border: none;
+  border-radius: 28px;
+  padding: 12px 28px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn--large { /* Modificador */
+  padding: 16px 40px;
+  font-size: 16px;
+}
+
+/* --- BLOCO TOPBAR (Topo) --- */
+.topbar {
+  background-color: #0f2f24;
+  padding: 20px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- BLOCO MENU --- */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu__item {
+  padding: 6px 10px;
+}
+
+.menu__link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.menu__link:hover {
+  color: var(--verde-destaque);
+}
+
+/* --- BLOCO PERFIL (MENU DROPDOWN) --- */
+.perfil {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.perfil__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.perfil__menu {
+  display: none; /* Oculto por padrão */
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: var(--fundo-claro);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 8px;
+  padding: 10px 0;
+}
+
+.perfil__link {
+  color: var(--verde-escuro);
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 14px;
+}
+
+.perfil__link:hover {
+  background-color: #f1f1f1;
+}
+
+.perfil__menu.show { /* Modificador para mostrar */
+  display: block;
+}
+
+/* --- BLOCO HERO (Seção Principal) --- */
+.hero-visual, .features, .cta {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.hero-visual {
+  padding-left: 80px;
+  padding-right: 80px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 50, 35, 0.95) 0%,
+      rgba(10, 50, 35, 0.65) 45%,
+      rgba(10, 50, 35, 0.9) 100%
+    ),
+    url("img/1.png") center / cover no-repeat;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content__title {
+  color: #b6f04a;
+  margin-bottom: 26px;
+  line-height: 1.2;
+}
+
+.hero-content__subtitle {
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.hero-content__cursive {
+  font-family: 'Pacifico', cursive;
+  font-size: 26px;
+  margin-bottom: 36px;
+  display: block;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 24px;
+}
+
+/* --- BLOCO SECTION (Base para seções) --- */
+.section {
+  padding: 100px 80px;
+  text-align: center;
+}
+
+.section__subtitle {
+  max-width: 700px;
+  margin: 14px auto 0;
+  opacity: 0.9;
+}
+
+
+/* --- BLOCO CANTEIROS --- */
+.canteiros-section {
+  background-color: #0f2f24;
+}
+
+.canteiros-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.canteiro-card--new { /* Modificador */
+  border: 2px dashed var(--verde-destaque);
+  background: transparent;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.canteiro-card--new {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.canteiro-card--new:hover {
+  background-color: rgba(127, 191, 63, 0.1);
+}
+
+.card__plus {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+/* --- BLOCO CARD (Base para cards) e LIST (Itens em cards) --- */
+.card {
+  background: white;
+  color: var(--verde-escuro);
+  padding: 24px;
+  border-radius: 18px;
+}
+
+.card__title {
+  margin-bottom: 20px;
+}
+
+.card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.list__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.list__item-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* --- BLOCO FEATURES (Funcionalidades/Catálogo) --- */
+.features {
+  background:
+    linear-gradient(rgba(20,59,47,.9), rgba(20,59,47,.9)),
+    url("img/2.png") center / cover no-repeat;
+}
+
+.cards-grid {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* --- BLOCO PLANT-CARD (Card de Planta Específico) --- */
+.plant-card {
+  width: 280px;
+  padding: 32px 26px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plant-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.plant-card__img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.plant-card__title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.plant-card__info {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+/* --- BLOCO CTA (Chamada para Ação) --- */
+.cta {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 47, 36, 0.95) 0%,
+      rgba(15, 47, 36, 0.65) 50%,
+      rgba(15, 47, 36, 0.9) 100%
+    ),
+    url("img/3.png") center / cover no-repeat;
+}
+
+.cta-content {
+  max-width: 620px;
+}
+
+.cta-content__title {
+  color: #ffffff;
+}
+
+.cta-content__list { /* Lista com setas */
+  list-style: none;
+  padding-left: 0;
+  margin: 24px 0;
+}
+
+.list__item-text {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+padding-left: 0;
+}
+
+.list__item-text::before {
+position: static;
+content: "➜";
+color: var(--verde-destaque);
+}
+
+.btn--catalogo {
+  margin-top: 30px;
+  max-width: 520px;
+}
+
+.plantio-mes {
+  display: flex;
+  gap: 30px;
+}
+
+.plantio-mes__calendario {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.plantio-mes__calendario button {
+  background: transparent;
+  border: 1px solid var(--verde-destaque);
+  color: #ffffff;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* --- BLOCO FOOTER --- */
+footer {
+  background-color: #0f2f24;
+  padding: 40px 80px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer__right ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer__list-item {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.footer__copyright {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* Responsivo simples */
+@media (max-width: 900px) {
+  .topbar, .hero-visual, .section, .cta, footer {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

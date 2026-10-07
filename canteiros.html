@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Horta Fácil | Gerenciar Canteiros</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style-canteiros.css">
+</head>
+<body>
+<header class="hero" id="inicio">
+<nav class="topbar">
+<div class="brand">
+<img src="src/logo/logo.png" alt="Horta Fácil" class="brand__logo">
+<span class="brand-name">Horta Fácil</span>
+</div>
+<ul class="menu">
+<li class="menu__item"><a href="logado.html" class="menu__link">Início</a></li>
+<li class="menu__item"><a href="#catalogo" class="menu__link">Catálogo de Plantas</a></li>
+<li class="menu__item"><a href="canteiros.html" class="menu__link">Canteiros</a></li>
+<li class="menu__item"><a href="#relatorios" class="menu__link">Relatórios</a></li>
+</ul>
+<div class="perfil">
+<img src="src/perfil/perfil.png" alt="Avatar do Usuário" class="perfil__avatar" id="perfilAvatar">
+<div class="perfil__menu" id="perfilMenu">
+<a href="#" class="perfil__link" id="editarPerfilLink">Editar Perfil</a>
+<a href="#" class="perfil__link" id="logoutLink">Sair</a>
+</div>
+</div>
+</nav>
+<div class="hero-visual">
+<div class="hero-content">
+<h1>Gerenciar Canteiros</h1>
+<p>Adicione, edite e organize seus espaços de cultivo.</p>
+</div>
+</div>
+</header>
+<main class="canteiros-section">
+<h2>Meus Canteiros</h2>
+<p class="subtitle">Crie, edite e acompanhe seus canteiros</p>
+<div class="canteiros-grid" id="canteiros-container">
+<div class="canteiro-card novo-canteiro" id="add-canteiro-card">
+<div class="plus">+</div>
+<p>Novo canteiro</p>
+</div>
+</div>
+<div id="modal-form" class="modal">
+<div class="modal-content">
+<span class="close-btn">&times;</span>
+<h3>Adicionar/Editar Canteiro</h3>
+<form id="formCanteiro">
+<input type="hidden" id="canteiroId">
+<div class="form-group">
+<label for="nomeCanteiro" class="form-group__label">Nome do Canteiro</label>
+<input type="text" id="nomeCanteiro" placeholder="Ex: PANCs, Temperos" required class="form-group__input">
+</div>
+<div id="plantas-inputs-container">
+</div>
+<button type="button" id="add-plant-btn" class="btn-action">Adicionar Planta</button>
+<button type="submit" class="btn-action btn-large btn--full">Salvar Canteiro</button>
+</form>
+</div>
+</div>
+<div id="modal-confirm-delete" class="modal">
+<div class="modal-content">
+<span class="close-btn-delete">&times;</span>
+<h3>Confirmar Exclusão</h3>
+<p>Você deseja mesmo excluir o canteiro "<strong id="canteiro-name-to-delete"></strong>"?</p>
+<button id="confirm-delete-btn" class="btn-action btn-large btn--full btn-delete-color">Excluir</button>
+</div>
+</div>
+</main>
+<footer>
+<div class="brand">
+<img src="src/logo/logo.png" alt="Horta Fácil" class="brand__logo">
+<span class="brand-name">Horta Fácil</span>
+</div>
+<div class="footer__right">
+<ul>
+<li>Sobre</li><br>
+<li>Política de Privacidade</li>
+</ul>
+© 2026 Horta Fácil · IFRS
+</div>
+</footer>
+<script src="js/gerenciar-canteiros.js"></script>
+</body>
+</html>

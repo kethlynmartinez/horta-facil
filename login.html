@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Horta Fácil</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style-login.css">
+</head>
+
+<body class="page-login">
+
+<main class="login-wrapper">
+
+  <div class="login-header">
+    <img src="src/logo/logo.png" alt="Logotipo Horta Fácil" class="login-header__logo">
+    <h1 class="login-header__title">Horta Fácil</h1>
+    <p class="login-header__subtitle">Acesse seus canteiros e planeje sua horta urbana</p>
+  </div>
+
+  <div class="login-card">
+
+    <div class="login-tabs">
+      <a href="#" class="login-tabs__tab login-tabs__tab--active">Entrar</a>
+      <a href="cadastro.html" class="login-tabs__tab">Criar conta</a>
+    </div>
+
+    <div class="demo-hint">
+      Testando o projeto? Entre com <strong>demo@hortafacil.com</strong> / <strong>123456</strong>
+    </div>
+
+    <form id="formLogin" class="login-form">
+
+      <div class="form-group">
+        <label for="email" class="form-group__label">Nome de usuário ou E-mail</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="seu.usuario ou seu@email.com"
+          required
+          class="form-group__input"
+        >
+      </div>
+
+      <div class="form-group">
+        <div class="form-group__row">
+          <label for="senha" class="form-group__label">Senha</label>
+          <a href="recuperar-senha.html" class="form-group__link">Esqueci minha senha</a>
+        </div>
+        <input
+          type="password"
+          id="senha"
+          name="senha"
+          placeholder="••••••"
+          required
+          class="form-group__input"
+        >
+      </div>
+
+      <button type="submit" class="btn--full">
+        Entrar
+      </button>
+
+    </form>
+  </div>
+
+  <a href="index.html" class="link--home">
+    ← Voltar para o início
+  </a>
+
+</main>
+<script src="js/mock-auth.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+</html>

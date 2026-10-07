@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Horta Fácil | Área Logada</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style-logado.css">
+
+</head>
+<body>
+
+<header class="hero" id="inicio">
+  <nav class="topbar">
+    <div class="brand">
+      <img src="src/logo/logo.png" alt="Horta Fácil" class="brand__logo">
+      <span class="brand__name">Horta Fácil</span>
+    </div>
+
+    <ul class="menu">
+      <li class="menu__item"><a href="logado.html" class="menu__link">Início</a></li>
+      <li class="menu__item"><a href="#catalogo" class="menu__link">Catálogo de Plantas</a></li>
+      <li class="menu__item"><a href="canteiros.html" class="menu__link">Canteiros</a></li>
+      <li class="menu__item"><a href="#relatorios" class="menu__link">Relatórios</a></li>
+    </ul>
+
+   <!-- Bloco de Perfil BEM -->
+   <div class="perfil">
+      <img src="src/perfil/perfil.png" alt="Avatar do Usuário" class="perfil__avatar" id="perfilAvatar">
+    
+      <div class="perfil__menu" id="perfilMenu">
+          <a href="#" class="perfil__link" id="editarPerfilLink">Editar Perfil</a>
+          <a href="#" class="perfil__link" id="logoutLink">Sair</a>
+      </div>
+  </div>
+  </nav>
+
+  <div class="hero-visual">
+    <div class="hero-content">
+      <h1 class="hero-content__title">SUA HORTA URBANA AQUI!</h1>
+      <p class="hero-content__subtitle">
+        Aqui você organiza seus canteiros, consulta o catálogo de plantas
+        e acompanha o que plantar em cada época do ano.
+      </p>
+
+      <span class="hero-content__cursive">Vamos cultivar?</span>
+    </div>
+  </div>
+</header>
+
+<!-- BLOCO 1: Canteiros -->
+<section class="section canteiros-section" id="canteiros">
+  <h2 class="section__title">Meus canteiros</h2>
+  <p class="section__subtitle">Crie, edite e acompanhe seus canteiros</p>
+
+  <div class="canteiros-grid">
+
+    <div class="card canteiro-card">
+      <h3 class="card__title">🌿 PANCs</h3>
+      <div class="card__list">
+        <div class="list__item">
+          <img src="src/plantas/orapronobis.png" class="list__item-img">
+          <span class="list__item-name">Ora pro nobis</span>
+        </div>
+        <div class="list__item">
+          <img src="src/plantas/peixinho.png" class="list__item-img">
+          <span class="list__item-name">Peixinho da horta</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card canteiro-card">
+      <h3 class="card__title">🌱 Temperos</h3>
+      <div class="card__list">
+        <div class="list__item">
+          <img src="src/plantas/oregano.jpg" class="list__item-img">
+          <span class="list__item-name">Orégano</span>
+        </div>
+        <div class="list__item">
+          <img src="src/plantas/manjerona.jpg" class="list__item-img">
+          <span class="list__item-name">Manjerona</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="canteiros.html" class="card canteiro-card--new">
+  <span class="card__plus">+</span>
+  <span>Novo canteiro</span>
+</a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 2: Catálogo -->
+<section class="section features" id="catalogo">
+  <h2 class="section__title">Catálogo de plantas</h2>
+  <p class="section__subtitle">Consulte informações completas de cultivo</p>
+
+  <div class="cards-grid">
+    <div class="card plant-card">
+      <img src="src/plantas/alface.jpg" alt="Alface" class="plant-card__img">
+      <h3 class="plant-card__title">Alface</h3>
+      <p class="plant-card__info">Sol pleno • Rega frequente</p>
+    </div>
+
+    <div class="card plant-card">
+      <img src="src/plantas/manjericao.jpg" alt="Manjericão" class="plant-card__img">
+      <h3 class="plant-card__title">Manjericão</h3>
+      <p class="plant-card__info">Sol pleno • Rega moderada</p>
+    </div>
+
+    <div class="card plant-card">
+      <img src="src/plantas/cebolinha.jpg" alt="Cebolinha" class="plant-card__img">
+      <h3 class="plant-card__title">Cebolinha</h3>
+      <p class="plant-card__info">Sol pleno • Rega leve</p>
+    </div>
+  </div>
+
+  <button class="btn btn--action btn--large btn--catalogo">
+      Clique aqui e aprenda a cultivar mais de 100 espécies!
+    </button>
+</section>
+   </div>
+</section>
+
+<footer>
+  <div class="footer__left">
+    <div class="brand">
+      <img src="src/logo/logo.png" alt="Horta Fácil" class="brand__logo">
+      <span class="brand__name">Horta Fácil</span>
+    </div>
+  </div>
+
+  <div class="footer__right">
+    <ul class="footer__list">
+      <li class="footer__list-item">Sobre</li>
+      <li class="footer__list-item">Política de Privacidade</li>
+    </ul>
+    <span class="footer__copyright">© 2026 Horta Fácil · IFRS</span>
+  </div>
+</footer>
+
+<script src="js/logado.js"></script>
+
+</body>
+</html>

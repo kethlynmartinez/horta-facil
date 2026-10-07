@@ -1,0 +1,167 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FUNDO */
+.page-login {
+  min-height: 100vh;
+  background-color: #0f2f24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* CONTAINER */
+.login-wrapper {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* CABEÇALHO */
+.login-header {
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.login-header__logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.login-header__title {
+  font-family: 'Pacifico', cursive;
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+.login-header__subtitle {
+  font-size: 14px;
+  opacity: 0.85;
+}
+.login-header__Recuperar {
+    font-size: 20px; 
+    color: #7fbf3f; 
+}
+
+/* CARD */
+.login-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 32px 28px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ABAS */
+.login-tabs {
+  display: flex;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 30px;
+}
+
+.login-tabs__tab {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #777; 
+}
+
+.login-tabs__tab--active {
+  background-color: #ffffff;
+  color: #0f2f24;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  cursor: default;
+}
+
+/* FORMULÁRIO E GRUPOS */
+.demo-hint {
+  background: #eef9e4;
+  color: #2f5d27;
+  border: 1px solid #cdeab3;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.login-form {
+    text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group__label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-group__input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.form-group__input:focus {
+  outline: none;
+  border-color: #7fbf3f;
+}
+
+/* LABEL + LINK ESQUECI SENHA */
+.form-group__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-group__link {
+  font-size: 12px;
+  color: #7fbf3f;
+  text-decoration: none;
+}
+
+/* BOTÃO DE ENTRAR (BTN--FULL) */
+.btn--full {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  background-color: #7fbf3f;
+  color: #ffffff;
+  border: none;
+  border-radius: 28px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* VOLTAR HOME */
+.link--home {
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #cfcfcf;
+  text-decoration: none;
+}
+
+.link--home:hover {
+  color: #ffffff;
+}
