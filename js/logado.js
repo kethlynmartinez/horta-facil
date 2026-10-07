@@ -8,7 +8,7 @@ const plantasPorMes = {
     { nome: "Alface", img: "src/plantas/alface.jpg" },
     { nome: "Manjericão", img: "src/plantas/manjericao.jpg" },
     { nome: "Cebolinha", img: "src/plantas/cebolinha.jpg" },
-    { nome: "Rúcula", img: "src/plantas/rucula.jpg" }
+    { nome: "Rúcula", img: null }
   ]
 };
 
@@ -31,10 +31,18 @@ function renderPlantas(mes) {
     const div = document.createElement("div");
     div.className = "planta-item";
     div.innerHTML = `
-      <img src="${planta.img}" alt="${planta.nome}">
+      <img src="${planta.img || ''}" alt="${planta.nome}">
       <small>${planta.nome}</small>
     `;
     container.appendChild(div);
+    if (!planta.img && window.HortaPlantas) {
+      const dados = HortaPlantas.buscarPorNome(planta.nome);
+      if (dados) {
+        HortaPlantas.obterImagem(dados).then(url => {
+          if (url) div.querySelector("img").src = url;
+        });
+      }
+    }
   });
 }
 
@@ -45,47 +53,4 @@ if (seletor) {
   seletor.addEventListener("change", e => {
     renderPlantas(Number(e.target.value));
   });
-}
-
-// --- MENU DE PERFIL ---
-
-const perfilAvatar = document.getElementById('perfilAvatar');
-const perfilMenu = document.getElementById('perfilMenu');
-const logoutLink = document.getElementById('logoutLink');
-const editarPerfilLink = document.getElementById('editarPerfilLink');
-
-// 1. Alterna a visibilidade do menu ao clicar no avatar
-if(perfilAvatar && perfilMenu) {
-    perfilAvatar.addEventListener('click', function(event) {
-        perfilMenu.classList.toggle('show');
-        event.stopPropagation();
-    });
-
-    // 2. Fecha o menu se o usuário clicar em qualquer lugar fora dele
-    document.addEventListener('click', function(event) {
-        if (!perfilMenu.contains(event.target) && !perfilAvatar.contains(event.target)) {
-            if (perfilMenu.classList.contains('show')) {
-                perfilMenu.classList.remove('show');
-            }
-        }
-    });
-}
-
-// 3. Funcionalidade de Sair (Logout)
-if(logoutLink) {
-    logoutLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        localStorage.removeItem('usuarioLogado');
-        window.location.href = 'login.html';
-    });
-}
-
-// 4. Funcionalidade de Editar Perfil
-if(editarPerfilLink) {
-    editarPerfilLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        alert("Funcionalidade de Editar Perfil: Redirecionando para a página de edição...");
-        // window.location.href = 'editar-perfil.html';
-        perfilMenu.classList.remove('show');
-    });
 }

@@ -6,9 +6,10 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/perfil.css">
 
 </head>
-<body>
+<body data-nav="publico">
 
 <header class="main-header" id="inicio">
   <nav class="topbar">
@@ -30,58 +31,72 @@
 <section class="catalog-intro">
   <h1>Catálogo de Plantas</h1>
   <p>
-    Conheça as espécies já mapeadas na Horta Fácil, com informações básicas de
-    sol e rega para te ajudar a planejar o próximo canteiro.
+    Mais de 100 espécies com informações de sol e rega para planejar o próximo canteiro. Busque pelo nome ou filtre por categoria.
   </p>
 </section>
 
 <section class="catalog-section">
-  <div class="cards-grid">
+  <div class="catalog-toolbar">
+    <input type="search" id="catalogo-busca" class="catalog-search" placeholder="Buscar por nome ou nome científico" aria-label="Buscar planta">
+    <div class="catalog-filters" id="catalogo-filtros" role="group" aria-label="Filtrar por categoria"></div>
+    <label class="catalog-agora"><input type="checkbox" id="catalogo-agora"> <span id="catalogo-agora-texto">Mostrar só o que plantar nesta estação</span></label>
+  </div>
+  <p class="catalog-count" id="catalogo-contagem" aria-live="polite"></p>
 
-    <div class="card plant-card">
-      <img src="src/plantas/alface.jpg" alt="Alface" class="plant-card__img">
-      <h3 class="plant-card__title">Alface</h3>
-      <p class="plant-card__info">Sol pleno • Rega frequente</p>
-    </div>
+  <div class="cards-grid" id="catalogo-grid"></div>
 
-    <div class="card plant-card">
-      <img src="src/plantas/manjericao.jpg" alt="Manjericão" class="plant-card__img">
-      <h3 class="plant-card__title">Manjericão</h3>
-      <p class="plant-card__info">Sol pleno • Rega moderada</p>
-    </div>
+  <div class="catalog-more">
+    <button type="button" class="btn btn--secondary" id="catalogo-mais">Carregar mais</button>
+  </div>
+  <p class="catalog-credit">Fotos: iNaturalist e Wikipédia. Informações de cultivo são orientações gerais.</p>
+</section>
 
-    <div class="card plant-card">
-      <img src="src/plantas/cebolinha.jpg" alt="Cebolinha" class="plant-card__img">
-      <h3 class="plant-card__title">Cebolinha</h3>
-      <p class="plant-card__info">Sol pleno • Rega leve</p>
-    </div>
-
-    <div class="card plant-card">
-      <img src="src/plantas/manjerona.jpg" alt="Manjerona" class="plant-card__img">
-      <h3 class="plant-card__title">Manjerona</h3>
-      <p class="plant-card__info">Sol pleno • Rega moderada</p>
-    </div>
-
-    <div class="card plant-card">
-      <img src="src/plantas/oregano.jpg" alt="Orégano" class="plant-card__img">
-      <h3 class="plant-card__title">Orégano</h3>
-      <p class="plant-card__info">Sol pleno • Rega leve</p>
-    </div>
-
-    <div class="card plant-card">
-      <img src="src/plantas/orapronobis.png" alt="Ora-pro-nóbis" class="plant-card__img">
-      <h3 class="plant-card__title">Ora-pro-nóbis</h3>
-      <p class="plant-card__info">Sol pleno • Rega moderada</p>
-    </div>
-
-    <div class="card plant-card">
-      <img src="src/plantas/peixinho.png" alt="Peixinho da horta" class="plant-card__img">
-      <h3 class="plant-card__title">Peixinho da horta</h3>
-      <p class="plant-card__info">Meia-sombra • Rega frequente</p>
-    </div>
-
+<section class="dicas" id="dicas">
+  <h2 class="dicas__titulo">Planejamento e organização</h2>
+  <p class="dicas__sub">Dicas para montar canteiros que dão certo.</p>
+  <div class="dicas__grid">
+    <article class="dica">
+      <h3>Plante na época certa</h3>
+      <p>Cada espécie tem estações em que se desenvolve melhor. Use o filtro de estação para ver o que plantar agora. As épocas valem para o Sul do Brasil e podem mudar conforme a região e a variedade.</p>
+    </article>
+    <article class="dica">
+      <h3>Combine plantas companheiras</h3>
+      <p>Algumas espécies crescem melhor juntas, como tomate com manjericão e cenoura com cebola. Outras competem ou atraem as mesmas pragas. Clique em uma planta para ver quem combina e quem evitar.</p>
+    </article>
+    <article class="dica">
+      <h3>Agrupe por necessidade de sol e água</h3>
+      <p>Reúna no mesmo canteiro plantas com sol e rega parecidos. Assim a rega fica simples e nenhuma espécie passa sede ou fica encharcada.</p>
+    </article>
+    <article class="dica">
+      <h3>Faça rodízio de culturas</h3>
+      <p>Evite repetir a mesma família de plantas no mesmo lugar em ciclos seguidos. Alternar folhosas, frutos, raízes e leguminosas ajuda a manter o solo equilibrado e reduz pragas.</p>
+    </article>
+    <article class="dica">
+      <h3>Cuide das plantas invasivas</h3>
+      <p>Hortelã e outras menta crescem rápido e ocupam o espaço das vizinhas. Cultive em vaso ou em um canto separado.</p>
+    </article>
+    <article class="dica">
+      <h3>Use flores como aliadas</h3>
+      <p>Tagetes, calêndula e capuchinha atraem polinizadores e ajudam a afastar algumas pragas. Vale reservar um espaço para elas na horta.</p>
+    </article>
   </div>
 </section>
+
+<div class="planta-modal" id="planta-modal" hidden>
+  <div class="planta-modal__content" role="dialog" aria-modal="true" aria-labelledby="planta-modal-titulo">
+    <button type="button" class="planta-modal__close" id="planta-modal-fechar" aria-label="Fechar">&times;</button>
+    <img id="planta-modal-img" class="planta-modal__img" alt="">
+    <h3 id="planta-modal-titulo"></h3>
+    <p class="planta-modal__sci" id="planta-modal-sci"></p>
+    <p class="planta-modal__info" id="planta-modal-info"></p>
+    <h4>Quando plantar</h4>
+    <div class="estacoes" id="planta-modal-estacoes"></div>
+    <h4>Combina com</h4>
+    <div class="tags" id="planta-modal-boas"></div>
+    <h4>Evite plantar perto de</h4>
+    <div class="tags tags--evitar" id="planta-modal-ruins"></div>
+  </div>
+</div>
 
 <footer class="main-footer">
   <div class="main-footer__left">
@@ -100,5 +115,9 @@
   </div>
 </footer>
 
+<script src="js/plantas-data.js"></script>
+<script src="js/plantas-dicas.js"></script>
+<script src="js/perfil.js"></script>
+<script src="js/catalogo.js"></script>
 </body>
 </html>

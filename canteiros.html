@@ -5,8 +5,9 @@
 <title>Horta Fácil | Gerenciar Canteiros</title>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style-canteiros.css">
+  <link rel="stylesheet" href="css/perfil.css">
 </head>
-<body>
+<body data-protegida>
 <header class="hero" id="inicio">
 <nav class="topbar">
 <div class="brand">
@@ -15,9 +16,8 @@
 </div>
 <ul class="menu">
 <li class="menu__item"><a href="logado.html" class="menu__link">Início</a></li>
-<li class="menu__item"><a href="#catalogo" class="menu__link">Catálogo de Plantas</a></li>
+<li class="menu__item"><a href="catalogo.html" class="menu__link">Catálogo de Plantas</a></li>
 <li class="menu__item"><a href="canteiros.html" class="menu__link">Canteiros</a></li>
-<li class="menu__item"><a href="#relatorios" class="menu__link">Relatórios</a></li>
 </ul>
 <div class="perfil">
 <img src="src/perfil/perfil.png" alt="Avatar do Usuário" class="perfil__avatar" id="perfilAvatar">
@@ -43,6 +43,28 @@
 <p>Novo canteiro</p>
 </div>
 </div>
+<section class="planejamento">
+<h2>Planejamento e organização</h2>
+<p class="subtitle">Dicas para montar seus canteiros</p>
+<div class="plan-grid">
+<article class="plan-card">
+<h3>Para plantar nesta estação: <span id="plan-estacao"></span></h3>
+<div class="tags tags--claro" id="plan-agora"></div>
+<a href="catalogo.html" class="plan-link">Ver catálogo completo</a>
+</article>
+<article class="plan-card">
+<h3>Como organizar</h3>
+<ul class="plan-lista">
+<li>Reúna no mesmo canteiro plantas com sol e rega parecidos.</li>
+<li>Combine plantas companheiras, como tomate com manjericão e cenoura com cebola.</li>
+<li>Separe as que competem ou atraem as mesmas pragas, como tomate e couve.</li>
+<li>Plante hortelã em vaso ou em um canto separado, porque ela se espalha.</li>
+<li>Alterne folhosas, frutos, raízes e leguminosas a cada ciclo.</li>
+</ul>
+</article>
+</div>
+</section>
+
 <div id="modal-form" class="modal">
 <div class="modal-content">
 <span class="close-btn">&times;</span>
@@ -55,8 +77,12 @@
 </div>
 <div id="plantas-inputs-container">
 </div>
-<button type="button" id="add-plant-btn" class="btn-action">Adicionar Planta</button>
-<button type="submit" class="btn-action btn-large btn--full">Salvar Canteiro</button>
+<datalist id="lista-plantas"></datalist>
+<div class="compat" id="compat-box" hidden></div>
+<div class="form-actions">
+<button type="button" id="add-plant-btn" class="btn-action btn-secondary-outline">+ Adicionar planta</button>
+<button type="submit" class="btn-action btn-large">Salvar canteiro</button>
+</div>
 </form>
 </div>
 </div>
@@ -82,6 +108,9 @@
 © 2026 Horta Fácil · IFRS
 </div>
 </footer>
+<script src="js/plantas-data.js"></script>
+<script src="js/plantas-dicas.js"></script>
 <script src="js/gerenciar-canteiros.js"></script>
+<script src="js/perfil.js"></script>
 </body>
 </html>

@@ -25,12 +25,25 @@ const USUARIO_DEMO = {
   nome: "Usuária Demo",
   username: "demo",
   email: "demo@hortafacil.com",
-  senha: "123456",
+  senha: "horta123",
   perfil: "comum",
 };
 
 function obterUsuarios() {
   const dados = localStorage.getItem(HORTA_USUARIOS_KEY);
+
+  if (dados) {
+    // migra o usuário demo criado antes da troca de senha
+    try {
+      const lista = JSON.parse(dados);
+      const demo = lista.find((u) => u.email === USUARIO_DEMO.email);
+      if (demo && demo.senha === "123456") {
+        demo.senha = USUARIO_DEMO.senha;
+        localStorage.setItem(HORTA_USUARIOS_KEY, JSON.stringify(lista));
+        return lista;
+      }
+    } catch (e) { /* tratado abaixo */ }
+  }
 
   if (!dados) {
     // Primeira vez que o site roda neste navegador: semeia a lista com o

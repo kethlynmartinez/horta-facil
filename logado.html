@@ -6,9 +6,10 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style-logado.css">
+  <link rel="stylesheet" href="css/perfil.css">
 
 </head>
-<body>
+<body data-protegida>
 
 <header class="hero" id="inicio">
   <nav class="topbar">
@@ -19,10 +20,9 @@
 
     <ul class="menu">
       <li class="menu__item"><a href="logado.html" class="menu__link">Início</a></li>
-      <li class="menu__item"><a href="#catalogo" class="menu__link">Catálogo de Plantas</a></li>
+      <li class="menu__item"><a href="catalogo.html" class="menu__link">Catálogo de Plantas</a></li>
       <li class="menu__item"><a href="canteiros.html" class="menu__link">Canteiros</a></li>
-      <li class="menu__item"><a href="#relatorios" class="menu__link">Relatórios</a></li>
-    </ul>
+          </ul>
 
    <!-- Bloco de Perfil BEM -->
    <div class="perfil">
@@ -116,9 +116,9 @@
     </div>
   </div>
 
-  <button class="btn btn--action btn--large btn--catalogo">
+  <a href="catalogo.html" class="btn btn--action btn--large btn--catalogo">
       Clique aqui e aprenda a cultivar mais de 100 espécies!
-    </button>
+    </a>
 </section>
    </div>
 </section>
@@ -140,7 +140,9 @@
   </div>
 </footer>
 
+<script src="js/plantas-data.js"></script>
 <script src="js/logado.js"></script>
 
+<script src="js/perfil.js"></script>
 </body>
 </html>
