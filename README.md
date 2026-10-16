@@ -4,6 +4,8 @@ Interface web para organização do cultivo de plantas, feita em HTML, CSS e Jav
 
 Projeto desenvolvido na disciplina de Front-end do curso técnico no Instituto Hardware Brasil. Há a possibilidade de aplicação em uma horta comunitária de Alvorada, RS, ainda em conversa.
 
+**Site:** https://kethlynmartinez.github.io/horta-facil/
+
 ## Páginas
 
 - Início
@@ -15,7 +17,7 @@ Projeto desenvolvido na disciplina de Front-end do curso técnico no Instituto H
 
 ## Como testar
 
-Abra o `index.html` no navegador, ou use a extensão Live Server do VS Code.
+Acesse o site, ou abra o `index.html` no navegador (também funciona com a extensão Live Server do VS Code).
 
 Usuário de demonstração:
 
@@ -26,6 +28,3 @@ Usuário de demonstração:
 
 A autenticação é simulada: usuários cadastrados ficam salvos no `localStorage` do navegador, sem servidor. Os canteiros ficam apenas em memória e reiniciam ao recarregar a página.
 
-## Próximos passos
-
-Pesquisa com usuários para validar as decisões de design.
